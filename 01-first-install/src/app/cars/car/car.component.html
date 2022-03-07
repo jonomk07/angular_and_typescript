@@ -1,0 +1,55 @@
+<div class="row item">
+    <div class="col-12 tag">
+
+        <!-- interpolation are used to insert variables into a string. eg: {{ name }} -->
+        <span>Name:</span> {{ carValues.name }}
+    </div>
+    <div class="col-12 tag">
+        <span>Model:</span> {{ carValues.model }}
+    </div>
+
+    <div class="col-12 tag">
+        <span>Color:</span> {{ getTheColor(carValues.color) }}
+    </div>
+    <!-- <div class="col-12 tag">
+        <span>Year:</span> {{ year }}
+    </div>
+    <div class="col-12 tag">
+        <span>Date:</span> {{ date() }}
+    </div> -->
+
+  
+    <!-- <div class="col-12 tag"> -->
+        <!-- add btn class  -->
+        <!-- <button class="btn btn-primary" (click)="changeValues()">Change Values</button> -->
+    <!-- </div> -->
+
+    <!-- <div class="col-12 tag"> -->
+      <!-- <a href="#">See more</a> -->
+      <!-- property binding is used to bind a property to an element. eg: [routerLink]="['/cars', car.id]"> -->
+      <!-- <a [href]="linkto" [target]="target">See more</a> -->
+      <hr/>
+      <!-- sting interpolation -->
+      <!-- <a href="{{ linkto }}" target="{{ target }}">See more</a> -->
+    <!-- </div> -->
+      <!-- not equal to disabled eg:[disabled]="!disabled" -->
+      <!-- if hidden is true, the element will be hidden. eg: [hidden]="hidden" -->
+      <!-- if hidden is false the element will be visible. eg: [hidden]="!hidden" -->
+      <!-- if hidden is not set, the element will be visible. eg: [hidden] -->    
+    <!-- <div class="col-12 tag">
+        <input type="text" 
+         [disabled]="!disabled"
+         [hidden]="hidden ? true : false" />
+      </div>
+   -->
+</div>
+
+
+<!-- <div class="row item">
+    <div class="col-12 tag">
+        <span>Name:</span> Mercedes
+    </div>
+    <div class="col-12 tag">
+        <span>Model:</span> C-Class
+    </div>
+</div> -->

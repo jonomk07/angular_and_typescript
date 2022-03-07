@@ -1,0 +1,25 @@
+<!-- <h1> Hello Jono From HTML</h1>
+<h2> {{title}} </h2> -->
+<header>
+    <app-header></app-header>
+</header>
+<div class="container">
+    <div class="row">
+       <app-cars></app-cars>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+     <app-life
+     *ngIf="show"
+     [artist]="artist"
+     ></app-life>
+    </div>
+
+    <div class="col-xs-12">
+        <button class="btn btn-primary" (click)="changeLifehk()">
+             change
+        </button>
+    </div>
+</div>

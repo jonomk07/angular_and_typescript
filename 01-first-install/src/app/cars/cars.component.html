@@ -1,0 +1,25 @@
+<div class="col-xs-12">
+    <h2>{{ title }}  </h2>
+    <!-- passing object to the parent to child component -->
+    <app-car
+    [carElement]="carValues"
+    #carComponent
+    ></app-car>
+    <hr />
+    <div
+    #anotherDiv>
+    Hello this is another div
+    </div>
+    <hr/>
+    <app-add
+    (carSubmited)="carWasSubmitted($event)"
+    (setTitle)="getTitle($event)">
+
+<div>
+    <span #contentApp>
+        {{ contentValue }}
+    </span>
+</div>
+</app-add>
+
+</div>

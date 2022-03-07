@@ -1,0 +1,65 @@
+<div class="row">
+    <!-- <div class="col-12">
+        <button 
+        class="btn btn-primary" 
+        (click)="alertOnClick($event)"
+        (mouseenter)="onMouseEnter()"
+        (mouseleave)="onMouseLeave()"
+        >click me !!</button>
+        <hr/>
+        <div>
+            {{ status }}
+        </div>
+    </div> -->
+    <!-- directive are used to add functionality to the DOM. -->
+    <!-- in other words its a function that help us do things to the DOM. -->
+    <!-- <div>
+        <label>Add Name</label>
+        <br />
+        <input type="text" class="from-control" (input)="onAddName($event)" />
+        <div>{{ name }}</div>
+        <br />
+        <label>Add Model</label>
+        <br />
+        <input type="text" class="from-control" (input)="onAddModel($event)" />
+        <div>{{ model }}</div>
+        <br />
+        <label>Add Color</label>
+        <br />
+        <input type="text" class="from-control" (input)="onAddColor($event)" />
+        <div>{{ color }}</div>
+        <br />
+        <hr />
+        <button class="btn btn-primary" (click)="onSubmitCar()">Add a car </button>
+    </div> -->
+
+     <!-- directive are used to add functionality to the DOM. eg:ngModel -->
+    <!-- ngModel is from the angular library. -->
+    <!-- ngModel is used to bind the data to the DOM. -->
+    <!-- ngModel is added on the app.modules.ts -->
+    <div>
+ <!-- local refrence -->
+        <input type="text" class="form-control" #idRef />
+
+        <label>Add Name</label>
+        <br />
+        <input type="text" class="from-control" [(ngModel)]="userData.name"/>
+        <div>{{ userData.name }}</div>
+        <br />
+        <label>Add Model</label>
+        <br />
+        <input type="text" class="from-control" [(ngModel)]="userData.model"/>
+        <div>{{ userData.model }}</div>
+        <br />
+        <label>Add Color</label>
+        <br />
+        <input type="text" class="from-control"[(ngModel)]="userData.color"/>
+        <div>{{ userData.color }}</div>
+        <br />
+        <hr />
+        <!-- <button class="btn btn-primary" (click)="onSubmitCar()">Add a car </button> -->
+        <button class="btn btn-primary" (click)="onSubmitCar(idRef)">Add a car </button>
+        <ng-content>
+        </ng-content>
+    </div>
+</div>
