@@ -31,11 +31,7 @@ export class CarComponent implements OnInit {
   // The constructor is used to set the values of class properties.
   // The constructor is used to call the methods of the class.
 
-
-
-  // @Input('carElement') carValues: { name: string; model: string; color: string; }
-
-  @Input('carElement') carValues:{ name:string, model:string, color: string };
+  @Input('carElements') carValues:{ name:string, model:string, color: string };
   
   constructor() {
     // setTimeout(() => {

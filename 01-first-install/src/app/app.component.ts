@@ -21,15 +21,49 @@ export class AppComponent {
     title = "Hello World From App Component ts";
     artist: string = "Snoop Dogg";
     show: boolean = true;
+    tvshow: boolean = false;
+    green:string = "green";
+
+    coffees:{style:string, available:string}[] = [
+        {style:"Espresso", available:"Yes"},
+        {style:"Black coffee", available:"no"},
+        {style:"Capuccino", available:"yes"}
+    ];
+
+    items = [
+        'Yes',
+        'No',
+        'Maybe',
+        'Not Sure'
+    ]
+
+    style = {
+        color: "pink",
+        fontSize: "20px"
+    };
+    // list = [ '1', '2', '3' ];
+
+    // list = [ {position:1}, {position:2}, {position:3} ];
+    
 
     constructor() {
-      setTimeout(() => {
-        this.show = false;
-      }
-        , 3000);
+      
+    }
+
+
+    getColor() {
+        return 'Blue';
     }
 
     changeLifehk() {
         this.artist = "Dr Dree";
     }
+
+    ngOnInit() {
+      // setTimeout(() => {
+      //   this.show = true;
+      // }
+      //   , 3000);
+    }
+
 }

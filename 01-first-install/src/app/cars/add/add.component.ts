@@ -56,10 +56,10 @@ export class AddComponent implements OnInit {
   //  this.color = (<HTMLInputElement>event.target).value;
   // }
 
-  onSubmitCar(ref: any) {
+  onSubmitCar() {
 
     this.carSubmited.emit(this.userData);
-    console.log(ref.value);
+    // console.log(ref.value);
     // console.log(this.userData);
     // console.log(this.userData.name);
     // console.log(this.userData.model);

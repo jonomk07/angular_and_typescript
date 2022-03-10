@@ -1,25 +1,232 @@
 <!-- <h1> Hello Jono From HTML</h1>
 <h2> {{title}} </h2> -->
 <header>
-    <app-header></app-header>
+  <app-header></app-header>
 </header>
 <div class="container">
-    <div class="row">
-       <app-cars></app-cars>
+  <div class="row">
+    <div *appCarousel="let item from items; let ctrl= controller">
+      <div>
+        {{ item }}
+      </div>
+      <button class="btn btn-primary" (click)="ctrl.prev()">Previous</button> 
+      <button class="btn btn-primary" (click)="ctrl.next()">Next</button>
     </div>
+    <app-cars></app-cars>
+  </div>
 </div>
 
+<!-- Attribute directives  change the appearance of elements. or behavior of elements. -->
+
 <div class="container">
+  <hr />
+  <div class="row" [ngStyle]="{'color' : green}">
+    <div>
+      Im color green
+    </div>
+
+  </div>
+  <hr />
+  <!-- if not show is = false then color is red else show green -->
+  <div class="row" [ngStyle]="{'color': show ? 'red' :  'green'}">
+    <div>
+      Im color red if show is true else green
+    </div>
+
+  </div>
+  <hr />
+
+  <div class="row" [ngStyle]="{color: getColor()}">
+    <div>
+      Im color Bleu
+    </div>
+
+  </div>
+
+  <hr />
+
+  <div class="row" [style.color]="'orange'">
+    <div>
+      Im color orange
+    </div>
+
+  </div>
+  <hr />
+  <div class="row" [ngStyle]="{'font-size.px':'44', 'color':'purple'}">
+    <div>
+      Im big text
+    </div>
+
+  </div>
+  <hr />
+  <div class="row" [ngStyle]="style">
+    <div>
+      Im the color object
+    </div>
+  </div>
+
+  <hr />
+  <div class="row" [class]="'myclass'">
+    <div>
+      this is myclass
+    </div>
+    <hr>
+    <!-- ngClass -->
+    <div class="row" [ngClass]="{'myclass' : true, 'myclass2' : true}">
+      <div>
+        myclass and myclass2
+      </div>
+    </div>
+    <hr>
+    <div class="row" [ngClass]="{'myclass': show ? true : false}">
+      <div>
+        myclass if show is true else false
+      </div>
+    </div>
+    <hr>
+    <div class="row" [class.last-class]="true" [class.mid-class]="true" [class.first-class]="show? true : false">
+      <div>
+        last-class
+      </div>
+    </div>
+    <hr>
+
     <div class="row">
+      <div [ngSwitch]="show">
+        <div *ngSwitchCase="true">
+          <div>
+            Switch Im true
+          </div>
+        </div>
+        <div *ngSwitchCase="false">
+          <div>
+            Switch Im false
+          </div>
+        </div>
+        <div *ngSwitchDefault>
+          <div>
+            Switch Im default
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <ul *ngFor="let coffee of coffees" [ngSwitch]="coffee.available">
+      <li *ngSwitchCase="'yes'">
+        {{coffee.style}}
+      </li>
+      <li *ngSwitchCase="'no'" [ngStyle]="{color:'red'}">
+        {{coffee.style}}
+      </li>
+    </ul>
+
+    <hr>
+    <div class="row pb-4">
+      <div appSimpleAttr>
+        Simple Attribute
+      </div>
+    </div>
+    <hr />
+
+    <div class="row pb-4">
+      <div appSimpleAttr2>
+        Renderer2
+      </div>
+    </div>
+    <hr />
+    <div class="row pb-4">
+      <div 
+      appSimpleAttr3 
+      [color]="'gray'" 
+      [disabled]="true"
+      [clickable]="true">
+        appSimpleAttr3
+      </div>
+
+      <div 
+      appSimpleAttr3 
+      [color]="'blue'" 
+      [disabled]="false"
+      [clickable]="false">
+        appSimpleAttr3
+      </div>
+      <hr>
+      <div *ngIf="true">
+        <div>
+          Structural directive
+        </div>
+      </div>
+      <hr>
+      <ng-template [ngIf]="true">
+        <div>
+          Template directive
+        </div>
+      </ng-template>
+
+    </div>
+    <hr>
+    <div class="row" *appSimpleStr1="true">
+      <div>
+        Simple Structural directive
+      </div>
+    </div>
+    <hr>
+    <div class="container pb-5">
+      <div class="row">
+        <!-- Structural directives change the DOM layout by adding or removing DOM elements. -->
+        <!-- *ngIf is  used to show or hide elements based on a condition. -->
+        <div *ngIf="show || tvshow">
+          <!-- Hello i am a div -->
+          Show = {{show}} |
+          Tv show = {{tvshow}}
+        </div>
+
+        <!-- <div *ngIf="show;else concert ">
+            Show =  {{show}} | 
+            Tv show =  {{tvshow}}
+        </div> -->
+        <div *ngIf="show;then liveshow else concert">
+          <!-- Hello i am a div -->
+          Show = {{show}} |
+          Tv show = {{tvshow}}
+        </div>
+
+        <ng-template #liveshow>
+          <div>
+            This is a Live show
+          </div>
+        </ng-template>
+
+        <ng-template #concert>
+          <div>
+            This is a concert
+          </div>
+        </ng-template>
+        <div [hidden]="show">
+          show if this show is true
+        </div>
+
+        <!-- <ng-template [ngIf]="show">
+          <div>
+            Hello i am a ng-template 
+          </div>
+      </ng-template> -->
+      </div>
+     
+    </div>
+
+    <div class="container">
+     
+      <!-- <div class="row">
      <app-life
      *ngIf="show"
      [artist]="artist"
      ></app-life>
-    </div>
+    </div> -->
 
-    <div class="col-xs-12">
+      <!-- <div class="col-xs-12">
         <button class="btn btn-primary" (click)="changeLifehk()">
              change
         </button>
+    </div> -->
     </div>
-</div>

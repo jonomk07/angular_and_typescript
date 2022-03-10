@@ -21,11 +21,29 @@ export class CarsComponent implements OnInit, AfterViewInit{
   // title properties 
   title:string = 'Super Cars';
 
-carValues:{ name:string, model:string, color: string } = {
-  name: 'BMW',
-  model: 'i8',
-  color: 'Red'
-}
+// carValues:{ name:string, model:string, color: string } = {
+//   name: 'BMW',
+//   model: 'i8',
+//   color: 'Red'
+// }
+
+carValues:{ name:string, model:string, color: string }[] = [
+  {
+    name: 'BMW',
+    model: 'i8',
+    color: 'Red'
+  },
+  {
+    name: 'Audi',
+    model: 'A8',
+    color: 'Blue'
+  },
+  {
+    name: 'Mercedes',
+    model: 'C class',
+    color: 'Black'
+  }
+]
 
   @ViewChild('anotherDiv', { static: true })
   anotherDiv: ElementRef;
