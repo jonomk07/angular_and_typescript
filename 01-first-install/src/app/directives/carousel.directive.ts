@@ -14,7 +14,7 @@ export interface CarouselContext {
 
 export class CarouselDirective implements OnInit {
 
-  context: CarouselContext | null = null;
+  context: CarouselContext;
   constructor(
     private templateRef: TemplateRef<any>,
     private viewContainerRew: ViewContainerRef
@@ -24,12 +24,34 @@ export class CarouselDirective implements OnInit {
 
   @Input('appCarouselFrom') items: string[];
 
-  next() {
-    console.log('next');
+  index: number = 0;
+  
+  autoplaySomething: string;
+
+  @Input('appCarouselAutoplay')
+  set autoplay(autoplay: 'on' | 'off'){
+    this.autoplaySomething = autoplay;
+  }
+
+  @Input('appCarouselDelay')
+  set delay(delay: number){
+   console.log(delay)
+  }
+
+  next(){
+    this.index++;
+    if( this.index >= this.items.length){
+      this.index = 0;
+    }
+    this.context.$implicit = this.items[this.index];
   }
 
   prev() {
-    console.log('next');
+   this.index--;
+    if( this.index < 0){
+      this.index = this.items.length - 1;
+    }
+    this.context.$implicit = this.items[this.index];
   }
 
   ngOnInit() {
@@ -47,8 +69,7 @@ export class CarouselDirective implements OnInit {
     //     });
     //   });
     console.log(this.context);
-        this.viewContainerRew.createEmbeddedView(this.templateRef, this.context);
-
+    this.viewContainerRew.createEmbeddedView(this.templateRef, this.context);
   }
 
 }

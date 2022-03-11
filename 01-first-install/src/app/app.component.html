@@ -5,7 +5,7 @@
 </header>
 <div class="container">
   <div class="row">
-    <div *appCarousel="let item from items; let ctrl= controller">
+    <div *appCarousel="let item from items autoplay 'on' delay 1000; let ctrl= controller">
       <div>
         {{ item }}
       </div>
