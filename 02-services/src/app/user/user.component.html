@@ -1,0 +1,16 @@
+<div class="no-gutters">
+  <div class="col">
+    <div class="form-group">
+      <h4>Add a user name</h4>
+      <input 
+      type="text" 
+      class="form-control" 
+      #userName>
+    </div>
+    <button 
+    class="btn btn-primary mt-2"
+    (click)="add(userName.value)">
+      Add user
+    </button>
+  </div>
+</div>
