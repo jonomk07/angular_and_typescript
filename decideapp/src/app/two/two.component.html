@@ -1,0 +1,57 @@
+<div style="width:400px">
+
+  <div class="mb-4">
+    <small>Your question was:</small>
+    <h4>{{ appValues.question }}</h4>
+  </div>
+
+  <div *ngIf="appValues.mode">
+
+    <input
+      type="text"
+      class="form-control mb-2"
+      placeholder="Add answer"
+      #custom
+    >
+    <button
+      type="button"
+      class="btn btn-outline-secondary btn-block mb-2 w-100"
+      (click)="addCustom(custom)"
+    >
+      Add
+    </button>
+<!-- pill buttons -->
+    <div>
+      <span
+        *ngFor="let custom of appValues.custom"
+        class="btn btn-outline-primary btn-sm mr-2 mb-2"
+      >
+        {{ custom }}
+      </span>
+    </div>
+<!-- End of pill buttons -->
+    <hr/>
+  </div>
+  <div class="form-group">
+
+    <button
+      type="button"
+      class="btn btn-outline-info btn-block w-100 mb-2"
+      (click)="changeMode()"
+      *ngIf="!appValues.mode"
+    >
+      I want to add my own
+    </button>
+
+
+    <button
+      type="button"
+      class="btn btn-outline-info btn-block w-100"
+      (click)="getResults()"
+    >
+      Make a decision
+    </button>
+
+  </div>
+
+</div>

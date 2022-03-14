@@ -1,0 +1,28 @@
+<div class="d-flex flex-column justify-content-center align-items-center vh-100">
+  <div class="mb-4">
+    <h1>{{ title }}</h1>
+  </div>
+  <div [ngSwitch]="appValues.visiblePanel">
+    <app-one 
+    *ngSwitchCase="'one'"
+    [appValues] = "appValues"
+    (next)="handleNext($event)"
+    (hasErrors)="handleErrors($event)">
+    </app-one>
+    <app-two 
+    *ngSwitchCase="'two'"
+    [appValues] = "appValues"
+    (next)="handleNext($event)"
+    (hasErrors)="handleErrors($event)">
+    </app-two>
+    <app-three *ngSwitchCase="'three'"
+    [appValues] = "appValues"
+    (next)="handleNext($event)"
+    (resetValues)="handleReset()">
+    </app-three>
+    
+    <div *ngIf="errors.show"  class="alert alert-danger mt-3" role="alert">
+     {{ errors.message }}
+    </div>
+  </div>
+</div>
