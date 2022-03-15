@@ -1,0 +1,19 @@
+<p>Hello !!</p>
+
+<div>
+  <strong>The post id is:</strong> {{ post.id }}
+</div>
+
+<div>
+  <strong>The rating is:</strong> {{ post.ratings }}
+</div>
+
+<hr/>
+
+<div>
+  <a [routerLink]="[
+    '/games',
+    related.id,
+    related.ratings
+  ]">Related games</a>
+</div>

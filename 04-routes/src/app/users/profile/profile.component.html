@@ -1,0 +1,12 @@
+<p>profile works!</p>
+<!-- queryParams takes an object as an argument, and it will be converted to a query string. -->
+<!-- fragment is a query parameter that can be used to navigate to a specific fragment of the URL. -->
+<!-- queryParamsHandling is set to 'merge' by default, so the queryParams object will be merged with the existing queryParams object. -->
+<!-- queryParamsHandling can be set to 'preserve' to preserve the existing queryParams object. -->
+
+
+<a
+  routerLink="../1000"
+  [queryParamsHandling]="'preserve'"
+  [fragment]="'otherfragment'"
+>Go to user id 1000</a>

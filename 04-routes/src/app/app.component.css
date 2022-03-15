@@ -1,0 +1,7 @@
+.active {
+    color: red !important;
+}
+
+nav a {
+    text-decoration: none;
+}

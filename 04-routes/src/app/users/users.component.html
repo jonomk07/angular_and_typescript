@@ -1,0 +1,11 @@
+<p>users works!</p>
+<!-- queryParams takes an object as an argument, and it will be converted to a query string. -->
+<!-- fragment is a query parameter that can be used to navigate to a specific fragment of the URL. -->
+
+<a
+  [routerLink]="['profile',10]"
+  [queryParams]="{ cache:true, redirect: false}"
+  [fragment]="'location'"
+>Go to user id 10</a>
+
+<router-outlet></router-outlet>
