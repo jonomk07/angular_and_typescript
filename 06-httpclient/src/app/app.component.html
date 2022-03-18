@@ -1,0 +1,63 @@
+<div class="container">
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
+    <div *ngIf="error.status" class="alert alert-danger" role="alert">
+      {{ error.message }}
+    </div>
+      <form (ngSubmit)="submitHandler()" #f="ngForm">
+        <div>
+            <h4>Add post</h4>
+            <hr/>
+
+            <div class="form-group">
+              <label>Post Name</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                class="form-control"
+                ngModel
+                required
+                #title="ngModel"
+              >
+            </div>
+            <p class="error-label" *ngIf="!title.valid && title.touched">
+              This input is required.
+            </p>
+
+            <div class="form-group">
+              <label for="body">Content</label>
+              <textarea
+                name="body"
+                rows="3"
+                class="form-control"
+                ngModel
+                required
+                #body="ngModel"
+              ></textarea>
+            </div>
+            <p class="error-label" *ngIf="!body.valid && body.touched">
+                This input is required.
+            </p>
+
+            <hr/>
+            <button
+              type="submit"
+              class="btn btn-primary"
+            >Submit Post</button>
+
+        </div>
+      </form>
+
+      <hr/>
+
+      <div *ngFor="let post of postsList;let i=index">
+        <div>Id: {{ post.id}}</div>
+        <div>Title: {{ post.title}}</div>
+        <div>Body: {{ post.body}}</div>
+        <div style="color:red" (click)="deletePost(post.id)">DELETE</div>
+        <hr/>
+      </div>
+    </div>
+</div>
+</div>

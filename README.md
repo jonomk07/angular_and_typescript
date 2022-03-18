@@ -40,4 +40,7 @@ run `npm install --global surge`
 And then run `surge`
 
 
-## create services
+## Istall and run JSON Server
+You can start JSON Server on other ports with the --port flag:
+`npm install -g json-server`
+`json-server --watch db.json --port 3004`
