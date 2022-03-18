@@ -1,0 +1,95 @@
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
+
+    <form class="mb-5" [formGroup]="personalForm" (submit)="submitForm()">
+      <div [formGroupName]="'userProfile'" class="form-profile">
+        <a [routerLink]="['/']">Home</a>
+        <h4 class="mt-5">Personal information</h4>
+
+        <!-- ***  NAME START ***-->
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="name" name="name" class="form-control" formControlName="name">
+        </div>
+        <div class="error-label"
+          *ngIf="!personalForm.get('userProfile.name.')?.valid && 
+          personalForm.get('userProfile.name')?.touched">
+          Please enter name
+        </div>
+
+        <!-- ***  LASTNAME START ***-->
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" id="email" email="email" class="form-control" formControlName="email">
+        </div>
+        <div class="error-label" *ngIf="!personalForm.get('userProfile.email')?.valid &&
+          personalForm.get('userProfile.email')?.touched">
+          <!-- loop personalForm.controls in a span -->
+       
+          <span *ngIf="personalForm.controls['userProfile.'].controls['email'].errors.required"> 
+            Please enter a valid
+            email</span>
+          <span *ngIf="personalForm.controls['userProfile'].controls['email'].errors.email"> 
+            This email is not
+            valid</span>
+        </div>
+
+
+      </div>
+
+      <hr />
+
+      <div class="form-options">
+
+        <h4>Civil status</h4>
+        <!-- ***  MARRIED OPTIONS START ***-->
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="status" id="married" value="married"
+            formControlName="status">
+          <label class="form-check-label" for="exampleRadios1">
+            Married
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="status" id="single" value="single"
+            formControlName="status">
+          <label class="form-check-label" for="exampleRadios2">
+            Single
+          </label>
+        </div>
+
+        <hr />
+
+        <h4>Abilities</h4>
+        <!-- ***  ABILITIES ***-->
+        
+
+        <div formArrayName="abilities">
+          <span *ngFor="let ability of abilitiesArray; let i=index">
+            <input 
+            type="checkbox"  
+            [value]="ability"
+            formControlName="{{ i }}">
+            {{ ability }}<br>
+          </span>
+        </div>
+        <hr />
+
+        <h4>Availability</h4>
+        <!-- ***  AVAILABILITY ***-->
+        <div class="form-group">
+          <label for="work">How much time do you want to work.</label>
+          <select class="form-control" id="work" name="work" formControlName="work">
+            <option *ngFor="let work of workHours" [value]="work">
+              {{work}}
+            </option>
+
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+
+      </div>
+    </form>
+  </div>
+</div>
