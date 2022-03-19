@@ -28,7 +28,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## you can add strictPropertyInitialization  to tsconfig.json
+you can add strictPropertyInitialization  to tsconfig.json
 ## This flag performs checks to ensure that each instance property of a class gets initialized in the constructor body, or by a property initializer.
 `strictPropertyInitialization": false`
 
@@ -41,6 +41,14 @@ And then run `surge`
 
 
 ## Istall and run JSON Server
+
 You can start JSON Server on other ports with the --port flag:
+
 `npm install -g json-server`
 `json-server --watch db.json --port 3004`
+
+## ng-animate
+
+https://github.com/jiayihu/ng-animate
+
+`npm install ng-animate --save`
