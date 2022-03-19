@@ -52,3 +52,14 @@ You can start JSON Server on other ports with the --port flag:
 https://github.com/jiayihu/ng-animate
 
 `npm install ng-animate --save`
+
+## Bootstrap 
+
+if you want to use bootstrap in your project
+
+run `npm i bootstrap`
+
+After installing got to your angular.json file and add the following to your build
+
+ `"architect": {"build": { "options": {"styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css",`
+
