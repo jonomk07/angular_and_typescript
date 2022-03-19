@@ -34,7 +34,7 @@ This flag performs checks to ensure that each instance property of a class gets 
 
 `strictPropertyInitialization": false`
 
-## eploy to a test server 
+## Deploy to a test server 
 
 https://surge.sh/
 
