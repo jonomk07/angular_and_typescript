@@ -1,0 +1,53 @@
+<div class="col-md-12 mb-5">
+  <div class="card" style="width: 25rem;">
+    <div class="card-body">
+      <h1>Pipes</h1>
+      <p>
+        <b>Pipes</b> are simple functions to use in template expressions 
+        to accept an input value and return a transformed value. Pipes are useful because 
+        you can use them throughout your application, while only declaring each pipe once.
+      </p>
+      <h5 class="card-title">{{ user.name | uppercase }}</h5>
+      <p class="card-text">{{ user.message | titlecase }}</p>
+      <p class="card-text">{{ user.firstLogin | date:'LL/dd/YYYY ' | uppercase }}</p>
+      <p class="card-text">{{ user.bignumber | number:'3.0-5' }}</p>
+      <p class="card-text">{{ user.perc | percent}}</p>
+      <p class="card-text">{{ user.perc | currency:'EUR':'symbol':'4.2-2'}}</p>
+      <p class="card-text">{{ user.json | json}}</p>
+    </div>
+  </div>
+  <div class="card mt-2 px-2" style="width: 25rem;">
+    <div *ngFor="let data of user.dad | keyvalue">
+      <span>{{data.key }} </span>: <span>{{data.value }}</span>
+    </div>
+  </div>
+  <hr />
+  <div class="mb-2">
+    Message: {{ greeting | async }}
+  </div>
+  <hr />
+  
+  <div>
+    {{ customValue | mycustompipe:20:'My custom pipes' }}
+  </div>
+  <hr />
+
+
+  <div class="col-md-12">
+    <h3>List</h3>
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="userToFilter">
+      <span class="mt-2 px-2">
+        <!-- ngModel is a directive that binds a property of a component to a DOM element. -->
+        <!-- ngModel is a tow way data binding. whaterver you type in the input field, the value will be reflected in the userToFilter variable. -->
+          {{userToFilter}}
+      </span>
+    </div>
+
+    <ul class="list-group mt-2">
+      <li class="list-group-item" 
+      *ngFor="let user of listOfUsers | filter:userToFilter; let i=index ">
+        {{ user.name }}
+      </li>
+    </ul>
+  </div>
