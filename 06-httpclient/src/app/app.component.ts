@@ -33,7 +33,17 @@ export class AppComponent implements OnInit, OnDestroy {
   submitHandler() {
     const postData = this.ourForm.value;
     this.postsService.addPost(postData).subscribe(
-      (data: Post)=>{ this.postsList.push(data)},
+      (data) => {
+        this.getPosts();
+        this.ourForm.reset();
+      },
+      error => {
+        console.log(error)
+        this.error = {
+          status:true,
+          message: error.message
+        }
+      }
     );
    }
    
