@@ -1,0 +1,75 @@
+
+<div class="container">
+
+  <div class="row">
+      <div class="col-md-12 pt-md-5">
+        <h3>Rectangles</h3>
+
+        <div
+          style="height:100px"
+          [@first]="firstState"
+          (click)="firstAnimationChange()"
+          (@first.start)="OnAmimationEvent($event)"
+          (@first.done)="OnAmimationEvent($event)"
+        ></div>
+
+        <hr/>
+
+        <div
+          style="height:100px;background-color:red"
+          [@second]="secondState"
+          (click)="secondAnimChange()"
+        ></div>
+
+        <hr/>
+        <div @parent>
+          <div
+          style="height:100px"
+          [@fourth]="fourthtState"
+          (click)="fourthtAnimationChange()"
+        ></div>
+        </div>
+        <hr/>
+        <div
+          style="height:100px;background-color:red"
+          [@fith]="fithState"
+          (click)="fithAnimationChange()"
+        ></div>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <!--  ANIMATE LIST -->
+  <div class="row">
+      <div class="col-md-12">
+          <h3>List</h3>
+          <form>
+              <div class="form-group">
+                <label for="names">Names</label>
+                <input type="test" class="form-control" #name>
+              </div>
+
+              <button class="btn btn-primary mt-3" (click)="addName(name.value)">Submit</button>
+            </form>
+      </div>
+  </div>
+  <hr/>
+  <div class="row">
+      <div class="col-md-12">
+          <ul class="list-group">
+              <li
+                class="list-group-item"
+                *ngFor="let name of listOfNames;let i = index"
+                (click)="deleteItemlist(i)"
+                [@third]
+                >
+                {{ name }}
+              </li>
+            </ul>
+      </div>
+  </div>
+
+</div>
+
