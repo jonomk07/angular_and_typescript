@@ -65,3 +65,6 @@ After installing got to your angular.json file and add the following to your bui
 
  `"architect": {"build": { "options": {"styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css",`
 
+## Generate pipe
+
+run `ng g pipe pipes/filter --skip-tests=true`
