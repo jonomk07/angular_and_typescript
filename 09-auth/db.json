@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$YlqZHAdMK37TGUdeTN8Jt.X8/gHaun6khO4vv/ZtiRRLpop2ZEvfy",
+      "id": 1
+    },
+    {
+      "email": "jono@gmail.com",
+      "password": "$2a$10$yM5ea6eDUFI5uVhN4JC3pOdpts2iMchQuJnASWeTzEYSRGgAs0IDm",
+      "id": 2
+    },
+    {
+      "email": "jonod@gmail.com",
+      "password": "$2a$10$LkTWE/Jsu9V5LXlE9rMcbePLf1TKyTR.n.irN8nZmlCsbEiObAM.G",
+      "id": 3
+    },
+    {
+      "email": "jono.muamba@gmail.com",
+      "password": "$2a$10$f/hsxIgzGLSDzrMuKzKNc.QLR19uKbicTvDu3TjcLfyb.9czm9VhW",
+      "id": 4
+    },
+    {
+      "email": "jono23@gmail.com",
+      "password": "$2a$10$ekDJCNOhz98Vv.zQiQJ9LeLPT0YjgqUPXv4EvrI3yo6PN8p9Nwn5K",
+      "id": 5
+    },
+    {
+      "email": "jonos@gmail.com",
+      "password": "$2a$10$mf7BmaMhfzM2Ew.3E8n6n.Ac4Sl2IOZeu2G/BetoIZOAfZewFQNMK",
+      "id": 6
+    },
+    {
+      "email": "jonny@gmail.com",
+      "password": "$2a$10$PV7E1mIrhQ5LUjFAi9Kop.WwSKQUThD38wNdB77t2V7QIMMB/tYu6",
+      "id": 7
+    },
+    {
+      "email": "jonomk@gmail.com",
+      "password": "$2a$10$7QjHGckQ/jSqMifFD0mP9e4KeKgkJuqk9bZDQLGgCrCjDl8ozVDG2",
+      "id": 8
+    }
+  ],
+  "posts": [
+    {
+      "title": "Anther post title.",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "id": 1
+    },
+    {
+      "title": "Dolore magna aliqua.",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "id": 2
+    }
+  ]
+}

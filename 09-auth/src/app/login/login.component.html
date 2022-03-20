@@ -1,0 +1,54 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="alert alert-danger" *ngIf="hasError">
+      {{ hasError }}
+    </div>
+    <!-- Login Form -->
+    <form (ngSubmit)="submitHandler()" #f="ngForm">
+
+      <input
+        type="email"
+        id="email"
+        class="fadeIn second"
+        name="email"
+        placeholder="Enter your email"
+        #email="ngModel"
+        ngModel
+        required
+        email
+      >
+      <p class="error-label" *ngIf="!email.valid && email.touched">
+          <!-- <span *ngIf="['email?.errors.required']">This input is required.</span> -->
+          <span *ngIf="['email?.errors.email']">This email is wrong</span>
+      </p>
+
+      <input
+        type="password"
+        id="password"
+        class="fadeIn third"
+        name="password"
+        placeholder="Enter your password"
+        ngModel
+        required
+        #password="ngModel"
+      >
+      <p class="error-label" *ngIf="!password.valid && password.touched">
+          This input is required.
+      </p>
+
+
+      <button
+        type="submit"
+        class="fadeIn fourth"
+      >{{ formMode ? 'Register' : 'Login' }}</button>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <span class="underlineHover"
+      (click)="toggleMode()"
+      >Switch to {{ !formMode ? 'Register' : 'Login' }}</span>
+    </div>
+
+  </div>
+</div>
