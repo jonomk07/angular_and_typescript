@@ -49,6 +49,32 @@ You can start JSON Server on other ports with the --port flag:
 
 `json-server --watch db.json --port 3004`
 
+## Install both JSON Server and JSON Server Auth :
+
+# NPM
+`npm install -g json-server json-server-auth`
+
+# Yarn
+`yarn add -g json-server json-server-auth`
+
+Create a db.json file with a users collection :
+
+`{`
+ ` "users": []`
+`}`
+
+## Start JSON server (with JSON server Auth as middleware) :
+
+if `json-server-auth db.json` is not running insatll 
+
+`npm install express` in case you see this error : `Error: Cannot find module 'express'`
+
+`json-server db.json -m ./node_modules/json-server-auth`
+
+with json-server installed globally and json-server-auth installed locally
+
+https://github.com/jeremyben/json-server-auth
+
 ## ng-animate
 
 https://github.com/jiayihu/ng-animate
@@ -68,3 +94,9 @@ After installing got to your angular.json file and add the following to your bui
 ## Generate pipe
 
 run `ng g pipe pipes/filter --skip-tests=true`
+
+## we need to install jwt-decode when we work with json
+
+Run `npm install jwt-decode` or `yarn add jwt-decode` to install the library.
+
+https://www.npmjs.com/package/jwt-decode
