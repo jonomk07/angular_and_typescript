@@ -1,1 +1,11 @@
 <p>one works!</p>
+<div *ngIf="user">
+{{ user.name }}
+</div>
+<button class="btn btn-primary" type="button" (click)="loadUser()">
+    load User
+</button>
+<br/>
+<button class="btn btn-primary mt-2" type="button" (click)="removeUser()">
+    remove User
+</button>

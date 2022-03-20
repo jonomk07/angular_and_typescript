@@ -2,6 +2,10 @@
   <h5 class="my-0 mr-md-auto font-weight-normal">Our App</h5>
   <nav class="my-2 my-md-0 mr-md-3">
 
+    <span class="navnbar-text" *ngIf="user">
+      {{ user.name }}
+    </span>
+
     <a class="p-2 text-dark"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{exact:true}"
@@ -17,7 +21,9 @@
 
     <a class="p-2 text-dark"
     routerLinkActive="active"
-    [routerLink]="['two']">Two</a>
+    [routerLink]="['two']"
+    *ngIf="user"
+    >Two</a>
   </nav>
 </div>
 
