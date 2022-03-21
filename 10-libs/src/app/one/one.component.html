@@ -1,0 +1,62 @@
+<h1>Accordion</h1>
+
+<accordion [isAnimated]="true" [closeOthers]="true">
+    <accordion-group>
+        <div accordion-heading>
+           Static Header
+        </div>
+        This content is straight in the template.
+    </accordion-group>
+    <accordion-group 
+        heading="Another group" 
+     
+        (isOpenChange)="consoleChange($event)"
+    >
+        <p>Some content</p>
+    </accordion-group>
+    <accordion-group heading="Another group" [isOpen ]="true">
+        <p>Some content</p>
+    </accordion-group>
+    <accordion-group heading="Another group" panelClass="customClass">
+        <p>Some content</p>
+    </accordion-group>
+</accordion>
+
+
+
+<h1>Tabs</h1>
+
+<div>
+    <tabset #myTab>
+        <tab heading="Basic title">Basic content</tab>
+        <tab heading="Basic Title 1">Basic content 1</tab>
+        <tab heading="Basic Title 2">Basic content 2</tab>
+    </tabset>
+</div>
+
+<button
+    class="btn btn-primary"
+    type="button"
+    (click)="selectTab(1)"
+>
+    Trigger
+</button>
+
+
+<!-- 
+<div>
+    <tabset justified="true">
+        <tab>
+            <ng-template tabHeading>
+                <div style="color:red">Basic title</div>
+            </ng-template>
+            Basic content
+        </tab>
+        <tab heading="Basic Title 1" active="true" removable="true">
+            Basic content 1
+        </tab>
+        <tab heading="Basic Title 2" customClass="whatever" disabled="true">
+            Basic content 2
+        </tab>
+    </tabset>
+</div>  -->

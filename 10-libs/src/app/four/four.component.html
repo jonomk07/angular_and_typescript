@@ -1,0 +1,53 @@
+<h1>Autocomplete</h1>
+
+<mat-form-field>
+    <input
+        matInput
+        type="text"
+        placeholder="Country"
+        class="form-control"
+        [matAutocomplete]="auto"
+        [formControl]="myControl"
+    >
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option
+            *ngFor="let country of filteredCountries | async"
+            [value]="country"
+        >
+        {{ country }}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>
+
+<h1>Tooltip</h1>
+
+<p
+    matTooltip="Show something"
+    matTooltipPosition="left"
+    matTooltipDisabled="true"
+    #tooltip="matTooltip"
+>
+    Hello guys , angular is awesome.
+</p>
+
+<button
+    class="btn btn-primary"
+    (click)="handleTooltip(tooltip)"
+>
+    Trigger
+</button>
+
+<h1>Spininers</h1>
+
+<app-atom-spinner
+    [animationDuration]="500"
+    [size]="80"
+    [color]="'red'"
+></app-atom-spinner>
+
+<app-hollow-dots-spinner
+  [animationDuration]="1000"
+  [dotSize]="15"
+  [dotsNum]="3"
+  [color]="'#ff1d5e'"
+></app-hollow-dots-spinner>

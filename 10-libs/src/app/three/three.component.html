@@ -1,0 +1,39 @@
+<h1>
+  MAT  Sidenav
+</h1>
+
+<mat-sidenav-container>
+
+    <mat-sidenav
+        #mySidenav
+        [(opened)]="opened"
+        mode="push"
+        position="start"
+        (opened)="openSidenav('opened')"
+        (closed)="openSidenav('closed')"
+        (openedChange)="changed()"
+    >
+        Sidenav content
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        
+        <p>
+            <mat-checkbox
+            [(ngModel)]="opened"
+            >
+                Open and close
+            </mat-checkbox>
+        </p>
+
+        <p>
+            <button 
+                class="btn btn-primary"
+                (click)="mySidenav.toggle()"
+            >
+                Toggle
+            </button>
+        </p>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
