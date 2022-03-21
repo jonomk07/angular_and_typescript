@@ -100,3 +100,11 @@ run `ng g pipe pipes/filter --skip-tests=true`
 Run `npm install jwt-decode` or `yarn add jwt-decode` to install the library.
 
 https://www.npmjs.com/package/jwt-decode
+
+## useful angular Libraries
+
+https://valor-software.com/ngx-bootstrap/#/
+
+https://material.angular.io/
+
+https://hackafro.github.io/angular-epic-spinners/
