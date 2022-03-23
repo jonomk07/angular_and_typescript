@@ -1,0 +1,28 @@
+<app-carousel
+  [carouselArticles]="carouselArticles"
+></app-carousel>
+<app-newsletter></app-newsletter>
+
+<div class="container">
+  <div class="row">
+    <div class="mx-auto mt-5 mb-3 monoton">
+      <h3>Latest news</h3>
+      <hr/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div
+      class="col-md-4"
+      *ngFor="let article of homeArticles"
+    >
+      <app-card
+        [article]="article"
+        [hasImage]="true"
+        [truncNumber]="200"
+      ></app-card>
+    </div>
+  </div>
+
+
+</div>

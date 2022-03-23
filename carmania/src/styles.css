@@ -1,0 +1,257 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+a { color: inherit;
+  text-decoration: none !important;}
+
+
+header {
+  z-index: 99999;
+}
+
+.monoton {
+  font-family: 'Monoton', cursive;
+}
+
+.navbar-brand {
+  font-family: 'Monoton', cursive;
+  font-size: 40px;
+}
+
+.footer-logo {
+  font-family: 'Monoton', cursive;
+  font-size: 20px;
+}
+
+
+.bg-dark-2 {
+  background-color: #262626!important;
+}
+
+.active-underline {
+  text-decoration: underline;
+}
+
+
+.text-alter {
+  color: #e91920 !important;
+}
+
+.carousel-slide {
+  height:400px;
+  width:100%;
+  background-size: cover !important;
+  display: block;
+}
+
+.carousel-caption {
+  bottom: 0px;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,191919+100&0+0,0.65+100 */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(25,25,25,0.65) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(25,25,25,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(25,25,25,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6191919',GradientType=0 ); /* IE6-9 */
+
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 50px;
+  right: 0%;
+  left: 0;
+}
+
+
+.articles-card-image {
+  width: 100%;
+  height: 230px;
+  background-size: cover !important;
+}
+
+.card-text {
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.card {
+  border: none;
+}
+.card small {
+  color: #00BCD4;
+}
+.card .card-title {
+  color: #5f5f5f;
+}
+
+.g1-alpha-2nd>span:before, .g1-beta-2nd>span:before, .g1-delta-2nd>span:before, .g1-epsilon-2nd>span:before, .g1-gamma-2nd>span:before, .g1-giga-2nd>span:before, .g1-mega-2nd>span:before, .g1-zeta-2nd>span:before {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin-bottom: .25em;
+  content: " ";
+  background-color: currentColor;
+}
+
+.newsl-subs .disclaimer {
+  width: 340px;
+  text-align: center;
+}
+
+.newsl-subs .disclaimer p {
+  font-size: 10px;
+  line-height: 15px;
+  color: #bfbfbf;
+}
+
+.newsl-subs {
+  border-bottom: 5px solid #666766;
+  border-top: 5px solid #676767;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  padding: 40px 0px;
+  background-image: url('assets/pattern1.png');
+  color: #ffffff;
+  margin:0px
+}
+
+.newsl-subs h3 {
+  font-weight: 100;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.newsl-subs input {
+  text-align: center;
+}
+
+.newsl-subs .btn {
+  width: 100%;
+}
+
+.newsl-subs input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.newsl-subs .error-label {
+  color: #F44336;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+section{ width:100%;}
+.banner-section{
+  background-size:cover;
+  height: 380px;
+  left: 0;
+  position: absolute;
+  top: 126px;
+  background-position:0;
+}
+
+.post-content-block .list-group h5 {
+  font-size: 16px;
+}
+
+.post-content-block .list-group p {
+  font-size: 13px;
+}
+
+.post-content-block  .list-group-item {
+  padding: 13px;
+  margin-bottom: 5px;
+}
+
+.post-content-block h4 {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 10px;
+  margin-bottom: 19px;
+  color: #393939;
+  font-weight: 100;
+}
+
+.post-content-block{ margin-top: 410px; }
+.post-content-block small { color: #00BCD4; }
+.post-content-block h1 {
+  color: #383838;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 10px 0px;
+  font-weight: 400;
+}
+
+.post-title-block h1 {color: #fff;font-size: 40px;; font-weight: bold; text-transform: capitalize;}
+.post-title-block li{font-size:20px; color: #fff;}
+.image-block{float:left; width:100%; margin-bottom:10px;}
+.footer-link{float:left; width:100%; background:#222222; text-align:center; padding:30px;}
+.footer-link a{color:#A9FD00; font-size:18px; text-transform:uppercase;}
+
+.post-content-block .mat-icon {
+  font-size: 20px;
+  width: 25px;
+  height: 20px;
+  color: red;
+}
+
+.post-content-block .favs-btn {
+  cursor: pointer;
+}
+
+.post-content-block .favs-btn span {
+  font-size: 23px;
+  font-weight: 100;
+  color: #757575;
+}
+
+.articles-end {
+  border-top: 1px solid #dadada;
+  padding-top: 20px;
+  font-size: 20px;
+  color: #F44336;
+}
+
+
+input.ng-invalid.ng-touched {
+  background:#ff5c5c36
+}
+
+.error-label {
+  color:red;
+  font-weight: bold;
+}
+
+.contact-container h1 {
+  font-size: 30px;
+  color: #636363;
+  font-weight: 100;
+}
+.contact-container label {
+  font-weight: 100;
+}
+
+.container-small {
+  margin-top: 100px !important;
+  margin-bottom: 170px !important;
+}
+
+
+
+@media (max-width: 767.98px) {
+  .banner-section{
+    top: 86px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-small {
+      width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .container-small {
+      width: 500px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-small {
+      width: 700px;
+  }
+}

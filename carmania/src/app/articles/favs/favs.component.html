@@ -1,0 +1,11 @@
+<div
+  class="favs-btn"
+  (click)="toogleFav()"
+>
+  <mat-icon>
+    {{ active ? 'favorite_border': 'favorite'}}
+  </mat-icon>
+  <span>
+    {{ active ? 'Add to favs':'remove from favs'}}
+  </span>
+</div>

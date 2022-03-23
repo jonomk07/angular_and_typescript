@@ -1,0 +1,24 @@
+<div class="container">
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+      <div class="row">
+        <div class="col-12 col-md">
+          <p class="footer-logo">Carmania</p>
+          <small class="d-block mb-3">© 2020</small>
+        </div>
+        <div class="col-3 col-xs">
+          <h5>Menu</h5>
+          <ul class="list-unstyled text-small">
+            <li *ngFor="let route of routes">
+              <a
+                class="text-muted"
+                [routerLink]="route.path"
+              >
+                {{ route.name }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+  

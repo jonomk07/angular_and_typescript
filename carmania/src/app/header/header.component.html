@@ -1,0 +1,28 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand mx-auto" href="#">Carmania</a>
+      <button class="navbar-toggler collapsed" type="button" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <div class="bg-dark-2 d-none d-sm-none d-md-block">
+      <div class="d-flex">
+          <ul class="list-inline mx-auto justify-content-center mb-0">
+            <li
+              class="list-inline-item"
+              *ngFor="let route of routes"
+            >
+              <a
+                class="nav-link text-white font-weight-light"
+                routerLinkActive="font-weight-bold text-alter"
+                [routerLinkActiveOptions]="{exact: route.exact}"
+                [routerLink]="route.path"
+              >
+                {{ route.name | uppercase }}
+              </a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </header>
+  

@@ -1,0 +1,51 @@
+<div class="row newsl-subs">
+    <div class="mx-auto justify-content-center">
+      <h3>Subscribe to our newsletter</h3>
+      <div class="form-group w-50 mx-auto">
+        <form [formGroup]="newsletterForm" (submit)="submitForm()">
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            formControlName="email"
+            placeholder="Enter your email"
+          >
+          <alert
+          class="mx-auto text-center"
+            type="danger"
+            *ngIf="formError.show"
+            dismissOnTimeout="1500"
+            (onClosed)="handleError('reset','')"
+          >
+            {{ formError.message }}
+          </alert>
+          <alert
+            type="success"
+            *ngIf="formSuccess"
+            dismissOnTimeout="1500"
+            (onClosed)="formSuccess = false"
+          >
+            Subscribed !!! Thank you.
+          </alert>
+          <button
+            type="submit"
+            class="btn btn-outline-light mt-3"
+            [disabled]="disableButton"
+          >
+            Subscribe
+          </button>
+  
+        </form>
+        <p class="error-label" *ngIf="!newsletterForm.get('email')!.valid && newsletterForm.get('email')!.touched">
+          <span *ngIf="newsletterForm.controls['email'].errors"> This input is required</span>
+          <span *ngIf="newsletterForm.controls['email'].errors"> This is not an email.</span>
+        </p>
+      </div>
+      <div class="disclaimer mx-auto pt-4">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+  </div>
+  

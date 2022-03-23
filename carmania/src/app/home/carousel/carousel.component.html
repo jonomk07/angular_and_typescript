@@ -1,0 +1,18 @@
+<carousel
+  [isAnimated]="true"
+  [itemsPerSlide]="3"
+  [singleSlideOffset]="true"
+  [noWrap]="true"
+>
+  <slide  *ngFor="let item of carouselArticles">
+    <a
+      [routerLink]="['articles', item.id]"
+      class="carousel-slide"
+      [ngStyle]="{'background-image':'url(/assets/images/'+ item.image +')'}"
+    >
+      <div class="carousel-caption">
+        <h4>{{ item.title }}</h4>
+      </div>
+    </a>
+  </slide>
+</carousel>
