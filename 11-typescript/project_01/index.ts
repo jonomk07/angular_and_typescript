@@ -1,3 +1,5 @@
+//BASIC CONTINUE
+
 import { User, Message } from "./interfaces";
 
 const userData = {
@@ -59,7 +61,6 @@ class Instruments {
     public play(): void {
         this.sound();
     }
-
 }
 
 // @public is always implied and can be left off, but means that a property can be reached from anywhere.
@@ -90,4 +91,83 @@ const instrument = new Instrument();
 
 guitar.sound();
 bass.sound();
-instrument.sound();
+instrument.sound(); // this is public
+
+// PASSING ARGS TO CONSTRUCTOR
+class Instrument2 {
+    constructor(public strings: number) { }
+
+    protected sounds(): void {
+        console.log("Classic sound " + `${this.strings} strings`);
+    }
+}
+
+const instrument2 = new Instrument2(6);
+console.log(instrument2.strings);
+
+// ACCESSORS
+
+class Users {
+    // private _name: string;
+    private _name: string = 'Ronaldo'
+
+    // get accessor always return a value
+    get name(): string {
+        return this._name;
+    }
+    // set accessor always receive a value
+    set name(value: string) {
+        if (value === "Leo Messi") {
+            this._name = "Leo Messi";
+        } else {
+            this._name = "Ronaldo";
+        }
+    }
+}
+
+let user = new Users();
+
+user.name = "Jono Muamba";
+console.log(user.name);
+
+user.name = "Leo Messi";
+console.log(user.name);
+
+// STATIC AND READONLY 
+
+//readonly is used to declare a property that cannot be changed after the object is created.
+class Airplane {
+    readonly model = "Airbus A380";
+}
+
+let plane = new Airplane();
+console.log(plane.model);
+
+// Static is used to declare a property that belongs to the class instead of instances of the class.
+class BMW {
+    static model = "M3";
+    static getModel() {
+        return this.model;
+    }
+}
+console.log(BMW.model);
+BMW.getModel();
+
+// ABSTRACT CLASS
+
+abstract class Movies {
+    abstract name: string;
+    abstract director(): void;
+}
+
+// You can only aceess the abstract via the child class
+class Action extends Movies {
+    name: string = "Action";
+    director(): void {
+        console.log("Action");
+    }
+
+}
+
+let movies = new Action(); // this is not possible
+console.log(movies.name);
